@@ -19,4 +19,28 @@ public class Chapter8 {
             BottlesOfBeer(num-1);
         }
     }
+    
+    public static int oddSum(int num, int sum){
+        if(num==1)
+            return sum+num;
+        else{
+            if(num%2==0)
+                return oddSum(num-1,sum);
+            else
+                return oddSum(num-1, sum+num);
+        }
+    }
+    
+    public static int Ack(int m, int n){
+        if (m==0)
+            return n+1;
+        if (m>0){
+            if(n==0)
+                return Ack(m-1,1);
+            if(n>0)
+                return Ack(m-1,Ack(m,n-1));
+        }
+        
+        return -1;
+    }
 }
